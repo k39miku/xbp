@@ -1,0 +1,44 @@
+import random
+import copy
+def display_rules():
+    print("このゲームは数あてゲームです。")
+    print("1~100までの数字から1つの正解の数字を答えるゲームです")
+    print("プレイヤー名を入力するとゲームが開始されます")
+    print("プレイヤーは2回まで挑戦できます")
+    print("ヒントも出すので正解を目指しましょう！")
+    print("神大生なら分かるはず！")
+    print("それでは始めましょう！")
+
+def play_game():
+    player_name = input("プレイヤー名を入力してください: ")
+    answer = 95
+    attempts = 0
+    max_attempts = 2
+
+    print(f"こんにちは、{player_name}さん。1から100までの数字を当ててみてください。")
+
+    while attempts < max_attempts:
+        try:
+            guess = int(input("数字を入力してください: "))
+
+            if guess == answer:
+                print("正解！さすが神大生！神奈川大学は今年、創立95周年を迎えました。知っていたあなたは真の神大生！それではまたお会いしましょう。")
+                break
+            else:
+                if attempts == 0:
+                    print("ヒントは神奈川大学は今年で○○")
+                
+
+                attempts += 1
+
+                if attempts < max_attempts:
+                    print("ラストチャンス！！！")
+                else:
+                    print("おしい！答えは95でした！神奈川大学は今年、創立95周年を迎えました。100周年はもうすぐそこですね！それではまたお会いしましょう。")
+        except ValueError:
+            print("無効な入力です。数字を入力してください。")
+           
+           
+
+# ゲームをプレイする
+play_game()
