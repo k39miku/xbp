@@ -19,8 +19,22 @@ else:
 #気温と画像を結び付けたいときはifでくくる　
 
 
-if temperature>=20:
-    print("20度以上です") #←ここに画像ingのやつ入れる.pcに画像を分かるように名前を付けて保存し、pythonの中のimaesに入れ、貼る
+if temperature>=25:
+    print("25度以上です")
+    
+     #←ここに画像ingのやつ入れる.pcに画像を分かるように名前を付けて保存し、pythonの中のimagesに入れ、貼る
 else:
-    print("20度未満です")
+    print("25度未満です")
+
+from PIL import Image
+
+temperature = 25  # 仮の気温（例として25℃とします）
+
+if temperature >= 25:
+    image_path = "hot_image.jpg"  # 25度以上の場合の画像ファイルパス
+else:
+    image_path = "cold_image.jpg"  # 25度以下の場合の画像ファイルパス
+
+image = Image.open(image_path)
+image.show()
 
